@@ -25,7 +25,7 @@ SECRET_KEY = '4t*m=*61b$@y8mz7)jd6z4b*w%dzl$89-n^9^vobonv*w+-)-0'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['whatithink-test.eu-west-1.elasticbeanstalk.com']
 
 
 # Application definition

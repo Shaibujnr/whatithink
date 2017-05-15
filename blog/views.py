@@ -1,5 +1,8 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from django.template.loader import get_template
+from django.template.context import Context
+from . import models
 import os
 
 
@@ -7,6 +10,15 @@ import os
 
 def home(request):
     if request.method == 'GET':
-        test_var = os.environ["MY_OWN_VARIABLE"] if "MY_OWN_VARIABLE" in os.environ else "Development mode"
-        http = "Welcome to HOME page and the test variable is %s" % test_var
-        return HttpResponse(http, status=200)
+        latest_posts = models.Post.objects.all()[0]
+        t = get_template('home.html')
+        html = t.render({"posts":latest_posts})
+        return HttpResponse(html, status=200)
+
+
+def article(request):
+    if request.method == 'GET':
+        post = models.Post.objects.all()[0]
+        t = get_template('article.html')
+        html = t.render({'post':post})
+        return HttpResponse(html,status=200)

@@ -4,3 +4,9 @@ from .models import Post,Comment
 # Register your models here.
 admin.site.register(Post)
 admin.site.register(Comment)
+
+class ImageInline(admin.StackedInline):
+    model = Comment
+
+class MyObjectAdmin(admin.ModelAdmin):
+    inlines = [ImageInline, ]

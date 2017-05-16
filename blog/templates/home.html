@@ -2,13 +2,20 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>WhatIThink|{{title}}</title>
+    <title>Welcome To WhatIthink</title>
 </head>
 <body>
-    <div>
-        {{posts.content|safe|linebreaks}}
-        <h3>{{posts.date_posted}}</h3>
-    </div>
+    <ul>
+        {% for post in posts %}
+            <li>
+                <div>
+                    <h1>{{post.title}}</h1>
+                    {{post.content|slice:":100"}}
+                    <h6><i><b>Posted:</b>{{post.date_posted}}</i></h6>
+                </div>
+            </li>
+        {% endfor %}
+    </ul>
 
 </body>
 </html>

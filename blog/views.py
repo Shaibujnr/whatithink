@@ -10,7 +10,7 @@ import os
 
 def home(request):
     if request.method == 'GET':
-        latest_posts = models.Post.objects.all()[0]
+        latest_posts = models.Post.objects.all()[:10]
         t = get_template('home.html')
         html = t.render({"posts":latest_posts})
         return HttpResponse(html, status=200)

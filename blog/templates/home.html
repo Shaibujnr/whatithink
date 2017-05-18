@@ -10,8 +10,8 @@
             <li>
                 <div>
                     <h1>{{post.title}}</h1>
-                    {{post.content|slice:":100"}}
-                    <h6><i><b>Posted:</b>{{post.date_posted}}</i></h6>
+                    {{post.content|safe}}
+                    <h5><i><b>Posted:</b>{{post.date_posted}}</i></h5>
                 </div>
             </li>
         {% endfor %}

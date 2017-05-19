@@ -19,15 +19,19 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '4t*m=*61b$@y8mz7)jd6z4b*w%dzl$89-n^9^vobonv*w+-)-0'
+SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['whatithink-test.eu-west-1.elasticbeanstalk.com', '127.0.0.1', 'localhost']
+if(os.environ.get("AWS_ENVIRONMENT") == "production"):
+    #production environment
+    ALLOWED_HOSTS = [os.environ.get("ALLOW_HOST")]
+else:
+    ALLOWED_HOSTS = []
+
 
 # Application definition
-
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -80,17 +84,6 @@ if 'RDS_DB_NAME' in os.environ:
             'PASSWORD': os.environ['RDS_PASSWORD'],
             'HOST': os.environ['RDS_HOSTNAME'],
             'PORT': os.environ['RDS_PORT'],
-        }
-    }
-else:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql',
-            'NAME': 'blog',
-            'USER': 'shaibu',
-            'PASSWORD': '123',
-            'HOST': '127.0.0.1',
-            'PORT': '5432',
         }
     }
 

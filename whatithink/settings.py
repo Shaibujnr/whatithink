@@ -136,3 +136,10 @@ MEDIA_URL = '/media/'
 #Redactor settings
 REDACTOR_OPTIONS = {'lang': 'en'}
 
+#email options
+EMAIL_HOST = 'smtp.sendgrid.net'
+EMAIL_HOST_USER = os.environ.get("SEND_GRID_USERNAME",'placeholder')
+EMAIL_HOST_PASSWORD = os.environ.get("SEND_GRID_PASSWORD",'placeholder')
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+

@@ -19,16 +19,15 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get("SECRET_KEY")
+SECRET_KEY = os.environ.get("SECRET_KEY",'4t*m=*61b$@y8mz7)jd6z4b*w%dzl$89-n^9^vobonv*w+-)-0')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = os.environ.get('DEBUG',True)
 
-if(os.environ.get("AWS_ENVIRONMENT") == "production"):
-    #production environment
-    ALLOWED_HOSTS = [os.environ.get("ALLOW_HOST")]
-else:
-    ALLOWED_HOSTS = []
+#Allowed hosts
+env_host = os.environ.get('ALLOW_HOST')
+ALLOWED_HOSTS = ['localhost','127.0.0.1'] if not env_host else [env_host]
+
 
 
 # Application definition
@@ -75,17 +74,17 @@ WSGI_APPLICATION = 'whatithink.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
-if 'RDS_DB_NAME' in os.environ:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql_psycopg2',
-            'NAME': os.environ['RDS_DB_NAME'],
-            'USER': os.environ['RDS_USERNAME'],
-            'PASSWORD': os.environ['RDS_PASSWORD'],
-            'HOST': os.environ['RDS_HOSTNAME'],
-            'PORT': os.environ['RDS_PORT'],
-        }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': os.environ.get('RDS_DB_NAME','blog'),
+        'USER': os.environ.get('RDS_USERNAME','shaibu'),
+        'PASSWORD': os.environ.get('RDS_PASSWORD','123'),
+        'HOST': os.environ.get('RDS_HOSTNAME','127.0.0.1'),
+        'PORT': os.environ.get('RDS_PORT','5432')
     }
+}
+
 
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators

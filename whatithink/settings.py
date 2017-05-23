@@ -129,10 +129,14 @@ STATICFILE_FINDERS = [
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
 ]
 
+#AWS settings
+AWS_STORAGE_BUCKET_NAME = os.environ.get("BUCKET_NAME")
+AWS_ACCESS_KEY_ID = os.environ.get("WITUSER_AKID")
+AWS_SECRET_ACCESS_KEY = os.environ.get("WITUSER_SAK")
+AWS_S3_CUSTOM_DOMAIN = os.environ.get("S3_DOMAIN",None)
 
 #media files
 MEDIA_ROOT = os.path.join(BASE_DIR, "media") #for development
-AWS_S3_CUSTOM_DOMAIN = os.environ.get("S3_DOMAIN",None)
 if AWS_S3_CUSTOM_DOMAIN:
     MEDIA_URL = "https://%s/" % AWS_S3_CUSTOM_DOMAIN
 else:

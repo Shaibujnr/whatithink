@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 """
 
 import os
+from django.core.files.storage import FileSystemStorage
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -130,11 +131,20 @@ STATICFILE_FINDERS = [
 
 
 #media files
-MEDIA_ROOT = os.path.join(BASE_DIR, "media")
-MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, "media") #for development
+AWS_S3_CUSTOM_DOMAIN = os.environ.get("S3_DOMAIN",None)
+if AWS_S3_CUSTOM_DOMAIN:
+    MEDIA_URL = "https://%s/" % AWS_S3_CUSTOM_DOMAIN
+else:
+    MEDIA_URL = '/media/'
+
+DEFAULT_FILE_STORAGE = ('storages.backends.s3boto3.S3Boto3Storage'
+                        if os.environ.get("AWS_ENVIRONMENT")
+                        else FileSystemStorage(location=MEDIA_ROOT))
 
 #Redactor settings
 REDACTOR_OPTIONS = {'lang': 'en'}
+REDACTOR_UPLOAD = 'uploads/'
 
 #email options
 EMAIL_HOST = 'smtp.sendgrid.net'

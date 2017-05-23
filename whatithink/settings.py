@@ -147,7 +147,18 @@ DEFAULT_FILE_STORAGE = ('storages.backends.s3boto3.S3Boto3Storage'
                         else FileSystemStorage(location=MEDIA_ROOT))
 
 #Redactor settings
-REDACTOR_OPTIONS = {'lang': 'en'}
+REDACTOR_OPTIONS = {'lang': 'en',
+                    'plugins': [
+                        'video',
+                        'table',
+                        'source',
+                        'inlinestyle',
+                        'fullscreen',
+                        'fontsize',
+                        'fontfamily',
+                        'fontcolor',
+                        'counter'
+                    ]}
 REDACTOR_UPLOAD = 'uploads/'
 
 #email options

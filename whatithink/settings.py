@@ -142,9 +142,12 @@ if AWS_S3_CUSTOM_DOMAIN:
 else:
     MEDIA_URL = '/media/'
 
-DEFAULT_FILE_STORAGE = ('storages.backends.s3boto3.S3Boto3Storage'
-                        if os.environ.get("AWS_ENVIRONMENT")
-                        else FileSystemStorage(location=MEDIA_ROOT))
+if os.environ.get("AWS_ENVIRONMENT"):
+    DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+
+# DEFAULT_FILE_STORAGE = ('storages.backends.s3boto3.S3Boto3Storage'
+#                         if os.environ.get("AWS_ENVIRONMENT")
+#                         else FileSystemStorage(location=MEDIA_ROOT))
 
 #Redactor settings
 REDACTOR_OPTIONS = {'lang': 'en',

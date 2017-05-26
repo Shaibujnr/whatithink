@@ -1,4 +1,5 @@
 appdirs==1.4.3
+beautifulsoup4==4.6.0
 boto3==1.4.4
 botocore==1.5.52
 Django==1.11.1

@@ -1,29 +1,44 @@
 from django.db import models
 import os
+from bs4 import BeautifulSoup
+from PIL import Image
 
-MEDIA_PATH = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),"media/uploads")
+MEDIA_PATH = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "media/uploads")
+
 
 # Create your models here.
 class Post(models.Model):
-    title = models.CharField(max_length=100,default="New Post Title",unique=True)
+    title = models.CharField(max_length=100, default="New Post Title", unique=True)
     content = models.TextField(default="New Post Content")
     date_posted = models.DateTimeField(auto_now_add=True)
 
     @property
     def get_preview_image(self):
-        return "/media/uploads/preview.png"
+        def resize_image(img,size,img_name):
+            im2 = img.resize(size,Image.ANTIALIAS)
+            im2.save(img_name,quality=90)
+
+        soup = BeautifulSoup(self.content,'html.parser')
+        summary_image = soup.find(id='si')
+        if not summary_image:
+            return "/media/uploads/preview.png"
+        image_source = summary_image['src']
+        image_file = os.path.join(MEDIA_PATH,image_source.split('/')[-1])
+        im1 = Image.open(image_file)
+        w,h = im1.size
+        pw,ph = 700,300
+        if w != pw and h != ph:
+            resize_image(im1,(pw,ph),image_file)
+        return image_source if summary_image else "/media/defaults/preview.png"
+
     @property
     def get_summary(self):
-        return "Android is a privilege separated operating system, " \
-               "i.e. each application in android is separated from another " \
-               "through a distinct id, and each application file / data is private " \
-               "to that application only. Each Android application is started in its own " \
-               "process thus are isolated from all other applications (even from system /" \
-               " default applications). As …"
-
+        soup = BeautifulSoup(self.content,'html.parser')
+        summary_text = soup.find(id="st")
+        return summary_text.string if summary_text else "Default Post Summary …"
 
     def __str__(self):
-        return "%s"%self.title
+        return "%s" % self.title
 
     class Meta:
         get_latest_by = "date_posted"
@@ -35,4 +50,4 @@ class Comment(models.Model):
     message = models.TextField(default="New Post Comment")
 
     def __str__(self):
-        return "%s"%self.message[:15]+"..."
+        return "%s" % self.message[:15] + "..."

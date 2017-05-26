@@ -21,7 +21,7 @@ class Post(models.Model):
         soup = BeautifulSoup(self.content,'html.parser')
         summary_image = soup.find(id='si')
         if not summary_image:
-            return "/media/uploads/preview.png"
+            return "/media/defaults/preview.png"
         image_source = summary_image['src']
         image_file = os.path.join(MEDIA_PATH,image_source.split('/')[-1])
         im1 = Image.open(image_file)

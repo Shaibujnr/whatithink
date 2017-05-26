@@ -23,7 +23,8 @@ from .adminsite import myAdminSite
 urlpatterns = [
     # url(r'^admin/', admin.site.urls),
     url(r'^admin/',myAdminSite.urls),
-    url(r'^', include('blog.urls')),
+    url(r'^blog/', include('blog.urls')),
+    url(r'^',include('main.urls')),
     url(r'^redactor/', include('redactor.urls')),
     url(
         r'^admin/password_reset/$',

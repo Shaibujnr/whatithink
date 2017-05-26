@@ -12,7 +12,7 @@ from django.shortcuts import redirect
 
 def home(request):
     if request.method == 'GET':
-        return redirect('/latest/')
+        return redirect('/blog/latest/')
 
 
 def latest(request):

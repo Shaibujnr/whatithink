@@ -98,24 +98,24 @@
                 <ul class="pagination">
                     {% if posts.has_previous %}
                         <li>
-                            <a href="/latest/?page={{posts.previous_page_number}}">&laquo;</a>
+                            <a href="/blog/latest/?page={{posts.previous_page_number}}">&laquo;</a>
                         </li>
                     {% endif %}
                     {% for paginator_link in paginator_generated %}
                         {% if paginator_link == posts.number %}
                             <li class="active">
-                                <a href="/latest/?page={{paginator_link}}">{{paginator_link}}</a>
+                                <a href="/blog/latest/?page={{paginator_link}}">{{paginator_link}}</a>
                             </li>
                         {% else %}
                             <li>
-                                <a href="/latest/?page={{paginator_link}}">{{paginator_link}}</a>
+                                <a href="/blog/latest/?page={{paginator_link}}">{{paginator_link}}</a>
                             </li>
                         {% endif %}
                     {% endfor %}
 
                     {% if posts.has_next %}
                         <li>
-                            <a href="/latest/?page={{posts.next_page_number}}">&raquo;</a>
+                            <a href="/blog/latest/?page={{posts.next_page_number}}">&raquo;</a>
                         </li>
                     {% endif %}
                 </ul>

@@ -15,8 +15,14 @@ def home(request):
         return redirect('/blog/latest/')
 
 
+# def latest(request):
+#     t = get_template('blog_home.html')
+#     html = t.render()
+#     return HttpResponse(html,status=200)
+
+
 def latest(request):
-    t = get_template('index.html')
+    t = get_template('blog_home.html')
     def generate_paginator(page_num, cols, total_num_of_pages):
         quo = page_num // cols
         rm = page_num % cols
@@ -25,7 +31,7 @@ def latest(request):
 
     if request.method == 'GET':
         cols = 5
-        posts_per_page = 1
+        posts_per_page = 2
         page_num_requested = request.GET.get('page', 1)
         try:
             page_num_requested = int(page_num_requested)

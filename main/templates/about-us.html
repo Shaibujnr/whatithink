@@ -33,7 +33,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="index.html">Shaibujnr</a>
+                    <a class="navbar-brand" href="/">Shaibujnr</a>
                 </div>
 				
                 <div class="collapse navbar-collapse navbar-right">
@@ -55,8 +55,10 @@
         <div class="container">			
 			<div class="skill-wrap clearfix">			
 				<div class="center wow fadeInDown">
-					<h2>About <span>Me</span></h2>
-					<p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut <br> et dolore magna aliqua. Ut enim ad minim veniam</p>
+					<h2><span>Skills</span></h2>
+					<p class="lead">These are some of the skills I have attained over the years<br>
+						and I intend to use them to better the technological realm and the world
+						entirely</p>
 				</div>
 				
 				<div class="row">		
@@ -64,7 +66,7 @@
 						<div class="sinlge-skill wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms">
 							<div class="joomla-skill">                                   
 								<p><em>85%</em></p>
-								<p>Joomla</p>
+								<p>Python</p>
 							</div>
 						</div>
 					</div>
@@ -73,7 +75,7 @@
 						<div class="sinlge-skill wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
 							<div class="html-skill">                                  
 								<p><em>95%</em></p>
-								<p>HTML</p>
+								<p>Java</p>
 							</div>
 						</div>
 					</div>
@@ -82,7 +84,7 @@
 						<div class="sinlge-skill wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="900ms">
 							<div class="css-skill">                                    
 								<p><em>80%</em></p>
-								<p>CSS</p>
+								<p>Javascript</p>
 							</div>
 						</div>
 					</div>
@@ -91,18 +93,45 @@
 						<div class="sinlge-skill wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="1200ms">
 							<div class="wp-skill">
 								<p><em>90%</em></p>
-								<p>Wordpress</p>                                     
+								<p>Android</p>
 							</div>
 						</div>
-					</div>					
+					</div>
+
+					<div class="col-sm-3">
+						<div class="sinlge-skill wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="1200ms">
+							<div class="wp-skill">
+								<p><em>90%</em></p>
+								<p>Django</p>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-sm-3">
+						<div class="sinlge-skill wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="1200ms">
+							<div class="wp-skill">
+								<p><em>90%</em></p>
+								<p>Express</p>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-sm-3">
+						<div class="sinlge-skill wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="1200ms">
+							<div class="wp-skill">
+								<p><em>90%</em></p>
+								<p>Swift</p>
+							</div>
+						</div>
+					</div>
 				</div>	
             </div>
 			
 			<!-- our-team -->
 			<div class="team">
 				<div class="center wow fadeInDown">
-					<h2>Team of <span>Gp.</span></h2>
-					<p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut <br> et dolore magna aliqua. Ut enim ad minim veniam</p>
+					<h2>About<span>Me</span></h2>
+					<p class="lead">Here are some few things you might want to know about me</p>
 				</div>
 
 				<div class="row clearfix">
@@ -110,17 +139,10 @@
 						<div class="single-profile-top wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms">
 							<div class="media">
 								<div class="pull-left">
-									<a href="#"><img class="media-object" src="images/man1.jpg" alt=""></a>
+									<a href="#"><img class="media-object" src="{% static 'images/man1.jpg' %}" alt=""></a>
 								</div>
 								<div class="media-body">
-									<h4>Jhon Doe</h4>
-									<h5>Founder and CEO</h5>
-									<ul class="tag clearfix">
-										<li class="btn"><a href="#">Web</a></li>
-										<li class="btn"><a href="#">Ui</a></li>
-										<li class="btn"><a href="#">Ux</a></li>
-										<li class="btn"><a href="#">Photoshop</a></li>
-									</ul>
+									<h4>Bio</h4>
 									
 									<ul class="social_icons">
 										<li><a href="#"><i class="fa fa-facebook"></i></a></li>
@@ -129,7 +151,11 @@
 									</ul>
 								</div>
 							</div><!--/.media -->
-							<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p>
+							<p>There are many variations of passages of Lorem Ipsum available,
+								but the majority have suffered alteration in some form,
+								by injected humour, or randomised words which don't look even
+								slightly believable.
+							</p>
 						</div>
 					</div><!--/.col-lg-4 -->
 					
@@ -138,17 +164,10 @@
 						<div class="single-profile-top wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms">
 							<div class="media">
 								<div class="pull-left">
-									<a href="#"><img class="media-object" src="images/man2.jpg" alt=""></a>
+									<a href="#"><img class="media-object" src="{% static 'images/man2.jpg' %}" alt=""></a>
 								</div>
 								<div class="media-body">
-									<h4>Jhon Doe</h4>
-									<h5>Founder and CEO</h5>
-									<ul class="tag clearfix">
-										<li class="btn"><a href="#">Web</a></li>
-										<li class="btn"><a href="#">Ui</a></li>
-										<li class="btn"><a href="#">Ux</a></li>
-										<li class="btn"><a href="#">Photoshop</a></li>
-									</ul>
+									<h4>Education</h4>
 									<ul class="social_icons">
 										<li><a href="#"><i class="fa fa-facebook"></i></a></li>
 										<li><a href="#"><i class="fa fa-twitter"></i></a></li> 
@@ -156,7 +175,10 @@
 									</ul>
 								</div>
 							</div><!--/.media -->
-							<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p>
+							<p>There are many variations of passages of Lorem Ipsum available,
+								but the majority have suffered alteration in some form, by injected humour,
+								or randomised words which don't look even slightly believable.
+							</p>
 						</div>
 					</div><!--/.col-lg-4 -->					
 				</div> <!--/.row -->
@@ -183,18 +205,11 @@
 						<div class="single-profile-bottom wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="600ms">
 							<div class="media">
 								<div class="pull-left">
-									<a href="#"><img class="media-object" src="images/man3.jpg" alt=""></a>
+									<a href="#"><img class="media-object" src="{% static 'images/man3.jpg' %}" alt=""></a>
 								</div>
 
 								<div class="media-body">
-									<h4>Jhon Doe</h4>
-									<h5>Founder and CEO</h5>
-									<ul class="tag clearfix">
-										<li class="btn"><a href="#">Web</a></li>
-										<li class="btn"><a href="#">Ui</a></li>
-										<li class="btn"><a href="#">Ux</a></li>
-										<li class="btn"><a href="#">Photoshop</a></li>
-									</ul>
+									<h4>Experience</h4>
 									<ul class="social_icons">
 										<li><a href="#"><i class="fa fa-facebook"></i></a></li>
 										<li><a href="#"><i class="fa fa-twitter"></i></a></li> 
@@ -202,24 +217,20 @@
 									</ul>
 								</div>
 							</div><!--/.media -->
-							<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p>
+							<p>There are many variations of passages of Lorem Ipsum available,
+								but the majority have suffered alteration in some form, by injected humour,
+								or randomised words which don't look even slightly believable.
+							</p>
 						</div>
 					</div>
 					<div class="col-md-4 col-sm-6 col-md-offset-2">
 						<div class="single-profile-bottom wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="600ms">
 							<div class="media">
 								<div class="pull-left">
-									<a href="#"><img class="media-object" src="images/man4.jpg" alt=""></a>
+									<a href="#"><img class="media-object" src="{% static 'images/man4.jpg' %}" alt=""></a>
 								</div>
 								<div class="media-body">
-									<h4>Jhon Doe</h4>
-									<h5>Founder and CEO</h5>
-									<ul class="tag clearfix">
-										<li class="btn"><a href="#">Web</a></li>
-										<li class="btn"><a href="#">Ui</a></li>
-										<li class="btn"><a href="#">Ux</a></li>
-										<li class="btn"><a href="#">Photoshop</a></li>
-									</ul>
+									<h4>Social Skills</h4>
 									<ul class="social_icons">
 										<li><a href="#"><i class="fa fa-facebook"></i></a></li>
 										<li><a href="#"><i class="fa fa-twitter"></i></a></li> 
@@ -227,67 +238,68 @@
 									</ul>
 								</div>
 							</div><!--/.media -->
-							<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p>
+							<p>There are many variations of passages of Lorem Ipsum available,
+								but the majority have suffered alteration in some form, by injected humour,
+								or randomised words which don't look even slightly believable.
+							</p>
 						</div>
 					</div>
 				</div>	<!--/.row-->
 			</div><!--section-->
 		</div><!--/.container-->
     </section><!--/about-us-->
-	
+
 	<section id="bottom">
-        <div class="container wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
-            <div class="row">
-                <div class="col-md-3 col-sm-6">
-                    <div class="widget">
-                        <h3>Company</h3>
-                        <ul>
-                            <li><a href="#">About us</a></li>
-                            <li><a href="#">We are hiring</a></li>
-                            <li><a href="#">Meet the team</a></li>
-                            <li><a href="#">Copyright</a></li>                           
-                        </ul>
-                    </div>    
-                </div><!--/.col-md-3-->
+		<div class="container wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
+			<div class="row">
+				<div class="col-md-3 col-sm-6">
+					<div class="widget">
+						<h3>Shaibujnr</h3>
+						<ul>
+							<li><a href="/">About Me</a></li>
+							<li><a href="/contact/">Hire Me</a></li>
 
-                <div class="col-md-3 col-sm-6">
-                    <div class="widget">
-                        <h3>Support</h3>
-                        <ul>
-                            <li><a href="#">Faq</a></li>
-                            <li><a href="#">Blog</a></li>
-                            <li><a href="#">Forum</a></li>
-                            <li><a href="#">Documentation</a></li>                          
-                        </ul>
-                    </div>    
-                </div><!--/.col-md-3-->
+						</ul>
+					</div>
+				</div><!--/.col-md-3-->
 
-                <div class="col-md-3 col-sm-6">
-                    <div class="widget">
-                        <h3>Developers</h3>
-                        <ul>
-                            <li><a href="#">Web Development</a></li>
-                            <li><a href="#">SEO Marketing</a></li>
-                            <li><a href="#">Theme</a></li>
-                            <li><a href="#">Development</a></li>
-                        </ul>
-                    </div>    
-                </div><!--/.col-md-3-->
+				<div class="col-md-3 col-sm-6">
+					<div class="widget">
+						<h3>Support</h3>
+						<ul>
+							<li><a href="/blog/">Blog</a></li>
+						</ul>
+					</div>
+				</div><!--/.col-md-3-->
 
-                <div class="col-md-3 col-sm-6">
-                    <div class="widget">
-                        <h3>Our Partners</h3>
-                        <ul>
-                            <li><a href="#">Adipisicing Elit</a></li>
-                            <li><a href="#">Eiusmod</a></li>
-                            <li><a href="#">Tempor</a></li>
-                            <li><a href="#">Veniam</a></li>                           
-                        </ul>
-                    </div>    
-                </div><!--/.col-md-3-->
-            </div>
-        </div>
-    </section><!--/#bottom-->
+				<div class="col-md-3 col-sm-6">
+					<div class="widget">
+						<h3>Services</h3>
+						<ul>
+							<li><a href="/services/">Web Development</a></li>
+							<li><a href="/services/">Mobile Application Development</a></li>
+							<li><a href="/services/">Application Development</a></li>
+							<li><a href="/services/">Others</a></li>
+						</ul>
+					</div>
+				</div><!--/.col-md-3-->
+
+				<div class="col-md-3 col-sm-6">
+					<div class="widget">
+						<h3>Skills</h3>
+						<ul>
+							<li><a href="/about/">Python</a></li>
+							<li><a href="/about/">Java</a></li>
+							<li><a href="/about/">JavaScript</a></li>
+							<li><a href="/about/">Android</a></li>
+							<li><a href="/about/">Git</a></li>
+							<li><a href="/about/">Swift</a></li>
+						</ul>
+					</div>
+				</div><!--/.col-md-3-->
+			</div>
+		</div>
+	</section><!--/#bottom-->
 	
 	<div class="top-bar">
 		<div class="container">

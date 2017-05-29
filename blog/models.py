@@ -38,6 +38,11 @@ class Post(models.Model):
 class Comment(models.Model):
     post = models.ForeignKey(Post)
     message = models.TextField(default="New Post Comment")
+    by = models.CharField(default="Anonymous", max_length=100)
 
     def __str__(self):
         return "%s" % self.message[:15] + "..."
+
+class Category(models.Model):
+    post = models.ManyToManyField(Post)
+    title = models.CharField(default="cat",max_length=20)

@@ -7,5 +7,6 @@ urlpatterns = [
     url(r'^about/$',views.about),
     url(r'^contact/$',views.contact),
     url(r'^portfolio/$',views.portfolio),
-    url(r'^services/$',views.services)
+    url(r'^services/$',views.services),
+    url(r'^thankyou/$',views.thankyou)
 ]

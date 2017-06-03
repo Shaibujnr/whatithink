@@ -51,7 +51,7 @@ h4{
 }
 
 a {
-  color: #E8CE0E;
+  color: #00f5ff;
   -webkit-transition: color 300ms, background-color 300ms;
   -moz-transition: color 300ms, background-color 300ms;
   -o-transition:  color 300ms, background-color 300ms;
@@ -70,7 +70,7 @@ hr {
 
 .btn-primary {
   padding: 8px 20px;
-  background: #E8CE0E;
+  background: #31708f;
   color: #fff;
   border-radius: 4px;
   border:none;
@@ -97,7 +97,7 @@ hr {
 
 a:hover,
 a:focus {
-  color: #000;
+  color: #00f5ff;
   text-decoration: none;
   outline: none;
 }
@@ -222,7 +222,7 @@ ul.social-share li a {
 }
 
 ul.social-share li a:hover {
-  background: #E8CE0E;
+  background: #31708f;
   color: #fff;
 }
 
@@ -232,7 +232,7 @@ ul.social-share li a:hover {
   color:#E8CE0E;
 }
 .navbar-header a.navbar-brand {
-  color:#E8CE0E;
+  color:#337ab7;
 }
 
 .navbar {
@@ -262,7 +262,7 @@ ul.social-share li a:hover {
 }
 
 .navbar-fixed-top .navbar-nav > li > a:hover{
-	background-color: #E8CE0E;
+	background-color: #007eff;
   color: #333;
 }
 
@@ -282,7 +282,7 @@ ul.social-share li a:hover {
 .navbar-fixed-top .navbar-nav > .open > a,
 .navbar-fixed-top .navbar-nav > .open > a:hover,
 .navbar-fixed-top .navbar-nav > .open > a:focus {
-  background-color: #E8CE0E;
+  background-color: #007eff;
   color: #333;
 }
 
@@ -427,7 +427,7 @@ ul.social-share li a:hover {
   line-height: 110px;
   text-align:center;
   background: #ffffff;
-  color: #E8CE0E;
+  color: #433e67;
   border: 3px solid #ffffff;
   box-shadow: inset 0 0 0 5px #f2f2f2;
   -webkit-box-shadow: inset 0 0 0 5px #f2f2f2;
@@ -440,11 +440,11 @@ ul.social-share li a:hover {
 }
 
 .feature-wrap i:hover {
-  background: #E8CE0E;
+  background: #433e67;
   color: #fff;
-  box-shadow: inset 0 0 0 5px #E8CE0E;
-  -webkit-box-shadow: inset 0 0 0 5px #E8CE0E;
-  border: 3px solid #E8CE0E;
+  box-shadow: inset 0 0 0 5px #433e67;
+  -webkit-box-shadow: inset 0 0 0 5px #433e67;
+  border: 3px solid #433e67;
 }
 
 #recent-works .col-xs-12.col-sm-4.col-md-3{
@@ -902,7 +902,7 @@ a.accordion-toggle  i{
 ********* About Us Page CSS ******
 **************************/
 .center span {
-	color:#E8CE0E;
+	color:#a94442;
 }
 
 .skill_text {
@@ -1281,7 +1281,7 @@ ul.social_icons li  a i{
 }
 
 .request h4 a{
-  background:#E8CE0E;
+  background:#337ab7;
   color: #fff;
   font-size: 14px;
   font-weight: normal;
@@ -1370,8 +1370,8 @@ ul.social_icons li  a i{
 .portfolio-filter > li a:hover,
 .portfolio-filter > li a.active{
   color:#fff;
-  background: #E8CE0E;
-  border: 1px solid #E8CE0E;
+  background: #337ab7;
+  border: 1px solid #31708f;
   box-shadow: none;
   -webkit-box-shadow: none;
 }
@@ -1797,7 +1797,7 @@ ul.sidebar-gallery {
 ************************/
 #bottom {
   background: #f5f5f5;
-  border-bottom: 5px solid #E8CE0E;
+  border-bottom: 5px solid #337ab7;
   font-size: 14px;
 }
 

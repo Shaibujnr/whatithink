@@ -1,56 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-	{% load static %}
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>About Me</title>
-
-    <!-- Bootstrap -->
-    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
-	<link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
-	<link href="{% static 'css/animate.min.css' %}" rel="stylesheet">
-    <link href="{% static 'css/prettyPhoto.css' %}" rel="stylesheet">
-	<link href="{% static 'css/style.css' %}" rel="stylesheet">
-	<link href="{% static 'css/responsive.css' %}" rel="stylesheet">
-    <!-- =======================================================
-        Theme Name: Gp
-        Theme URL: https://bootstrapmade.com/gp-free-multipurpose-html-bootstrap-templat/
-        Author: BootstrapMade
-        Author URL: https://bootstrapmade.com
-    ======================================================= -->    
-    
-  </head>
-  <body class="homepage">   
-	<header id="header">
-        <nav class="navbar navbar-fixed-top" role="banner">
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="/">Shaibujnr</a>
-                </div>
-				
-                <div class="collapse navbar-collapse navbar-right">
-                    <ul class="nav navbar-nav">
-                        <li><a href="/">Home</a></li>
-                        <li class="active"><a href="/about/">About Me</a></li>
-                        <li><a href="/services/">Services</a></li>
-                        <li><a href="/portfolio/">Portfolio</a></li>
-                        <li><a href="/blog/">Blog</a></li>
-                        <li><a href="/contact/">Contact</a></li>
-                    </ul>
-                </div>
-            </div><!--/.container-->
-        </nav><!--/nav-->
-		
-    </header><!--/header-->
-		
+{% extends 'base.html' %}
+{% load static %}
+{% block about_active %}active{% endblock %}
+{% block content %}
 	<section id="about-us">
         <div class="container">			
 			<div class="skill-wrap clearfix">			
@@ -139,22 +90,13 @@
 						<div class="single-profile-top wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms">
 							<div class="media">
 								<div class="pull-left">
-									<a href="#"><img class="media-object" src="{% static 'images/man1.jpg' %}" alt=""></a>
+									<a href="#"><img class="media-object" src="{% static 'images/biography.png' %}" alt=""></a>
 								</div>
 								<div class="media-body">
 									<h4>Bio</h4>
-									
-									<ul class="social_icons">
-										<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-										<li><a href="#"><i class="fa fa-twitter"></i></a></li> 
-										<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-									</ul>
 								</div>
 							</div><!--/.media -->
-							<p>There are many variations of passages of Lorem Ipsum available,
-								but the majority have suffered alteration in some form,
-								by injected humour, or randomised words which don't look even
-								slightly believable.
+							<p>Born Shaibu Shaibu in Kano State Nigeria.
 							</p>
 						</div>
 					</div><!--/.col-lg-4 -->
@@ -164,20 +106,16 @@
 						<div class="single-profile-top wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms">
 							<div class="media">
 								<div class="pull-left">
-									<a href="#"><img class="media-object" src="{% static 'images/man2.jpg' %}" alt=""></a>
+									<a href="#"><img class="media-object" src="{% static 'images/education.jpg' %}" alt=""></a>
 								</div>
 								<div class="media-body">
 									<h4>Education</h4>
-									<ul class="social_icons">
-										<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-										<li><a href="#"><i class="fa fa-twitter"></i></a></li> 
-										<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-									</ul>
 								</div>
 							</div><!--/.media -->
-							<p>There are many variations of passages of Lorem Ipsum available,
-								but the majority have suffered alteration in some form, by injected humour,
-								or randomised words which don't look even slightly believable.
+							<p>-Primary School: Learn N Grow Intl. School Kano class of 2007<br>
+								-Secondary School: St. Thomas Secondary Kano class of 2013<br>
+								-University: University of Ilorin Kwara: class of 2018<br>
+								----Course of Study: Electrical Engineering
 							</p>
 						</div>
 					</div><!--/.col-lg-4 -->					
@@ -205,21 +143,27 @@
 						<div class="single-profile-bottom wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="600ms">
 							<div class="media">
 								<div class="pull-left">
-									<a href="#"><img class="media-object" src="{% static 'images/man3.jpg' %}" alt=""></a>
+									<a href="#"><img class="media-object" src="{% static 'images/experience.jpg' %}" alt=""></a>
 								</div>
 
 								<div class="media-body">
 									<h4>Experience</h4>
-									<ul class="social_icons">
-										<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-										<li><a href="#"><i class="fa fa-twitter"></i></a></li> 
-										<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-									</ul>
 								</div>
 							</div><!--/.media -->
-							<p>There are many variations of passages of Lorem Ipsum available,
-								but the majority have suffered alteration in some form, by injected humour,
-								or randomised words which don't look even slightly believable.
+							<p>-Epex(Engineering Project Exhibition) Unilorin 2016<br>
+								-----desc: Designed an electronic unit for a dc fan that can be controlled from an Android app we made<br>
+								-----tools: Arduino, Android Studio, Dc Fan, Resistors and Transistors<br>
+								-Google HashCode<br>
+								----Solved delivery problem in 2016 extended qualification round<br>
+								----Solved streaming problem in 2017, my team ranked 2000+ in extended round<br>
+								----------We were the first to submit in Nigeria<br>
+								-Internship at KEDCO(Kano Electric Distribution Company) 2016<br>
+								-----A brief introduction to Networking <br>
+								-----Gridix: A small android app for managing their infrastructures(WIP)<br>
+								-Internship at ECNX 2017<br>
+								-----Learnt Web Development<br>
+								-----Built Igentik(Backend Developer)<br>
+								-----Built this website :) <br>
 							</p>
 						</div>
 					</div>
@@ -227,20 +171,17 @@
 						<div class="single-profile-bottom wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="600ms">
 							<div class="media">
 								<div class="pull-left">
-									<a href="#"><img class="media-object" src="{% static 'images/man4.jpg' %}" alt=""></a>
+									<a href="#"><img class="media-object" src="{% static 'images/social.jpg' %}" alt=""></a>
 								</div>
 								<div class="media-body">
 									<h4>Social Skills</h4>
-									<ul class="social_icons">
-										<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-										<li><a href="#"><i class="fa fa-twitter"></i></a></li> 
-										<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-									</ul>
 								</div>
 							</div><!--/.media -->
-							<p>There are many variations of passages of Lorem Ipsum available,
-								but the majority have suffered alteration in some form, by injected humour,
-								or randomised words which don't look even slightly believable.
+							<p>-Disciplined<br>
+								-Great Sense of Humor<br>
+								-Attentive Listening<br>
+								-A bit of a talkative<br>
+								-Great sense of Team work<br>
 							</p>
 						</div>
 					</div>
@@ -249,110 +190,5 @@
 		</div><!--/.container-->
     </section><!--/about-us-->
 
-	<section id="bottom">
-		<div class="container wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
-			<div class="row">
-				<div class="col-md-3 col-sm-6">
-					<div class="widget">
-						<h3>Shaibujnr</h3>
-						<ul>
-							<li><a href="/">About Me</a></li>
-							<li><a href="/contact/">Hire Me</a></li>
+{% endblock %}
 
-						</ul>
-					</div>
-				</div><!--/.col-md-3-->
-
-				<div class="col-md-3 col-sm-6">
-					<div class="widget">
-						<h3>Support</h3>
-						<ul>
-							<li><a href="/blog/">Blog</a></li>
-						</ul>
-					</div>
-				</div><!--/.col-md-3-->
-
-				<div class="col-md-3 col-sm-6">
-					<div class="widget">
-						<h3>Services</h3>
-						<ul>
-							<li><a href="/services/">Web Development</a></li>
-							<li><a href="/services/">Mobile Application Development</a></li>
-							<li><a href="/services/">Application Development</a></li>
-							<li><a href="/services/">Others</a></li>
-						</ul>
-					</div>
-				</div><!--/.col-md-3-->
-
-				<div class="col-md-3 col-sm-6">
-					<div class="widget">
-						<h3>Skills</h3>
-						<ul>
-							<li><a href="/about/">Python</a></li>
-							<li><a href="/about/">Java</a></li>
-							<li><a href="/about/">JavaScript</a></li>
-							<li><a href="/about/">Android</a></li>
-							<li><a href="/about/">Git</a></li>
-							<li><a href="/about/">Swift</a></li>
-						</ul>
-					</div>
-				</div><!--/.col-md-3-->
-			</div>
-		</div>
-	</section><!--/#bottom-->
-	
-	<div class="top-bar">
-		<div class="container">
-			<div class="row">
-			    <div class="col-lg-12">
-				   <div class="social">
-						<ul class="social-share">
-							<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-							<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-							<li><a href="#"><i class="fa fa-linkedin"></i></a></li> 
-							<li><a href="#"><i class="fa fa-dribbble"></i></a></li>
-							<li><a href="#"><i class="fa fa-skype"></i></a></li>
-						</ul>
-				   </div>
-                </div>
-			</div>
-		</div><!--/.container-->
-	</div><!--/.top-bar-->
-	
-	<footer id="footer" class="midnight-blue">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-6">
-                    &copy; Gp Theme. All Rights Reserved.
-                    <div class="credits">
-                        <!-- 
-                            All the links in the footer should remain intact. 
-                            You can delete the links only if you purchased the pro version.
-                            Licensing information: https://bootstrapmade.com/license/
-                            Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Gp
-                        -->
-                        <a href="https://bootstrapmade.com/">Bootstrap Themes</a> by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-                    </div>
-                </div>
-                <div class="col-sm-6">
-                    <ul class="pull-right">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Faq</a></li>
-                        <li><a href="#">Contact Us</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </footer><!--/#footer-->
-	
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="{% static 'js/jquery.js' %}"></script>
-    <script src="{% static 'js/bootstrap.min.js' %}"></script>
-    <script src="{% static 'js/jquery.prettyPhoto.js' %}"></script>
-    <script src="{% static 'js/jquery.isotope.min.js' %}"></script>
-    <script src="{% static 'js/wow.min.js' %}"></script>
-	<script src="{% static 'js/main.js' %}"></script>
-    
-</body>
-</html>

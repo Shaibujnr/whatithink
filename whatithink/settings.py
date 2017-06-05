@@ -120,35 +120,37 @@ USE_L10N = True
 
 USE_TZ = True
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/1.11/howto/static-files/
-
-STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, "static")
-
-STATICFILE_FINDERS = [
-    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-]
-
 #AWS settings
 AWS_STORAGE_BUCKET_NAME = os.environ.get("BUCKET_NAME")
 AWS_ACCESS_KEY_ID = os.environ.get("WITUSER_AKID")
 AWS_SECRET_ACCESS_KEY = os.environ.get("WITUSER_SAK")
 AWS_S3_CUSTOM_DOMAIN = os.environ.get("S3_DOMAIN",None)
 
+# Static files (CSS, JavaScript, Images)
+# https://docs.djangoproject.com/en/1.11/howto/static-files/
+STATICFILES_LOCATION = 'static'
+STATICFILES_STORAGE = 'custom_storages.StaticStorage'
+STATIC_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, STATICFILES_LOCATION) if os.environ.get('AWS_ENVIRONMENT') else '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, "static") #for development
+
+STATICFILE_FINDERS = [
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+]
+
+
+
 #media files
+MEDIAFILES_LOCATION = 'media'
 MEDIA_ROOT = os.path.join(BASE_DIR, "media") #for development
 if AWS_S3_CUSTOM_DOMAIN:
-    MEDIA_URL = "https://%s/" % AWS_S3_CUSTOM_DOMAIN
+    MEDIA_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, MEDIAFILES_LOCATION)
 else:
     MEDIA_URL = '/media/'
 
 if os.environ.get("AWS_ENVIRONMENT"):
-    DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+    DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
 
-# DEFAULT_FILE_STORAGE = ('storages.backends.s3boto3.S3Boto3Storage'
-#                         if os.environ.get("AWS_ENVIRONMENT")
-#                         else FileSystemStorage(location=MEDIA_ROOT))
+
 
 #Redactor settings
 REDACTOR_OPTIONS = {'lang': 'en',

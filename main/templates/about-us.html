@@ -1,0 +1,194 @@
+{% extends 'base.html' %}
+{% load static from staticfiles %}
+{% block about_active %}active{% endblock %}
+{% block content %}
+	<section id="about-us">
+        <div class="container">			
+			<div class="skill-wrap clearfix">			
+				<div class="center wow fadeInDown">
+					<h2><span>Skills</span></h2>
+					<p class="lead">These are some of the skills I have attained over the years<br>
+						and I intend to use them to better the technological realm and the world
+						entirely</p>
+				</div>
+				
+				<div class="row">		
+					<div class="col-sm-3">
+						<div class="sinlge-skill wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms">
+							<div class="joomla-skill">                                   
+								<p><em>85%</em></p>
+								<p>Python</p>
+							</div>
+						</div>
+					</div>
+					
+					 <div class="col-sm-3">
+						<div class="sinlge-skill wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
+							<div class="html-skill">                                  
+								<p><em>95%</em></p>
+								<p>Java</p>
+							</div>
+						</div>
+					</div>
+					
+					<div class="col-sm-3">
+						<div class="sinlge-skill wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="900ms">
+							<div class="css-skill">                                    
+								<p><em>80%</em></p>
+								<p>Javascript</p>
+							</div>
+						</div>
+					</div>
+					
+					 <div class="col-sm-3">
+						<div class="sinlge-skill wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="1200ms">
+							<div class="wp-skill">
+								<p><em>90%</em></p>
+								<p>Android</p>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-sm-3">
+						<div class="sinlge-skill wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="1200ms">
+							<div class="wp-skill">
+								<p><em>90%</em></p>
+								<p>Django</p>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-sm-3">
+						<div class="sinlge-skill wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="1200ms">
+							<div class="wp-skill">
+								<p><em>90%</em></p>
+								<p>Express</p>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-sm-3">
+						<div class="sinlge-skill wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="1200ms">
+							<div class="wp-skill">
+								<p><em>90%</em></p>
+								<p>Swift</p>
+							</div>
+						</div>
+					</div>
+				</div>	
+            </div>
+			
+			<!-- our-team -->
+			<div class="team">
+				<div class="center wow fadeInDown">
+					<h2>About<span>Me</span></h2>
+					<p class="lead">Here are some few things you might want to know about me</p>
+				</div>
+
+				<div class="row clearfix">
+					<div class="col-md-4 col-sm-6">	
+						<div class="single-profile-top wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms">
+							<div class="media">
+								<div class="pull-left">
+									<a href="#"><img class="media-object" src="{% static 'images/biography.png' %}" alt=""></a>
+								</div>
+								<div class="media-body">
+									<h4>Bio</h4>
+								</div>
+							</div><!--/.media -->
+							<p>Born Shaibu Shaibu in Kano State Nigeria.
+							</p>
+						</div>
+					</div><!--/.col-lg-4 -->
+					
+					
+					<div class="col-md-4 col-sm-6 col-md-offset-2">	
+						<div class="single-profile-top wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms">
+							<div class="media">
+								<div class="pull-left">
+									<a href="#"><img class="media-object" src="{% static 'images/education.jpg' %}" alt=""></a>
+								</div>
+								<div class="media-body">
+									<h4>Education</h4>
+								</div>
+							</div><!--/.media -->
+							<p>-Primary School: Learn N Grow Intl. School Kano class of 2007<br>
+								-Secondary School: St. Thomas Secondary Kano class of 2013<br>
+								-University: University of Ilorin Kwara: class of 2018<br>
+								----Course of Study: Electrical Engineering
+							</p>
+						</div>
+					</div><!--/.col-lg-4 -->					
+				</div> <!--/.row -->
+				<div class="row team-bar">
+					<div class="first-one-arrow hidden-xs">
+						<hr>
+					</div>
+					<div class="first-arrow hidden-xs">
+						<hr> <i class="fa fa-angle-up"></i>
+					</div>
+					<div class="second-arrow hidden-xs">
+						<hr> <i class="fa fa-angle-down"></i>
+					</div>
+					<div class="third-arrow hidden-xs">
+						<hr> <i class="fa fa-angle-up"></i>
+					</div>
+					<div class="fourth-arrow hidden-xs">
+						<hr> <i class="fa fa-angle-down"></i>
+					</div>
+				</div> <!--skill_border-->       
+
+				<div class="row clearfix">   
+					<div class="col-md-4 col-sm-6 col-md-offset-2">	
+						<div class="single-profile-bottom wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="600ms">
+							<div class="media">
+								<div class="pull-left">
+									<a href="#"><img class="media-object" src="{% static 'images/experience.jpg' %}" alt=""></a>
+								</div>
+
+								<div class="media-body">
+									<h4>Experience</h4>
+								</div>
+							</div><!--/.media -->
+							<p>-Epex(Engineering Project Exhibition) Unilorin 2016<br>
+								-----desc: Designed an electronic unit for a dc fan that can be controlled from an Android app we made<br>
+								-----tools: Arduino, Android Studio, Dc Fan, Resistors and Transistors<br>
+								-Google HashCode<br>
+								----Solved delivery problem in 2016 extended qualification round<br>
+								----Solved streaming problem in 2017, my team ranked 2000+ in extended round<br>
+								----------We were the first to submit in Nigeria<br>
+								-Internship at KEDCO(Kano Electric Distribution Company) 2016<br>
+								-----A brief introduction to Networking <br>
+								-----Gridix: A small android app for managing their infrastructures(WIP)<br>
+								-Internship at ECNX 2017<br>
+								-----Learnt Web Development<br>
+								-----Built Igentik(Backend Developer)<br>
+								-----Built this website :) <br>
+							</p>
+						</div>
+					</div>
+					<div class="col-md-4 col-sm-6 col-md-offset-2">
+						<div class="single-profile-bottom wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="600ms">
+							<div class="media">
+								<div class="pull-left">
+									<a href="#"><img class="media-object" src="{% static 'images/social.jpg' %}" alt=""></a>
+								</div>
+								<div class="media-body">
+									<h4>Social Skills</h4>
+								</div>
+							</div><!--/.media -->
+							<p>-Disciplined<br>
+								-Great Sense of Humor<br>
+								-Attentive Listening<br>
+								-A bit of a talkative<br>
+								-Great sense of Team work<br>
+							</p>
+						</div>
+					</div>
+				</div>	<!--/.row-->
+			</div><!--section-->
+		</div><!--/.container-->
+    </section><!--/about-us-->
+
+{% endblock %}
+

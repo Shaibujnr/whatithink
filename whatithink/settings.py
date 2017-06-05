@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 """
 
 import os
+from django.core.files.storage import FileSystemStorage
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -40,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'blog',
+    'main',
     'redactor'
 ]
 
@@ -58,7 +60,7 @@ ROOT_URLCONF = 'whatithink.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(os.path.dirname(os.path.dirname(__file__)),'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -118,28 +120,71 @@ USE_L10N = True
 
 USE_TZ = True
 
+#AWS settings
+AWS_STORAGE_BUCKET_NAME = os.environ.get("BUCKET_NAME")
+AWS_ACCESS_KEY_ID = os.environ.get("WITUSER_AKID")
+AWS_SECRET_ACCESS_KEY = os.environ.get("WITUSER_SAK")
+AWS_S3_CUSTOM_DOMAIN = os.environ.get("S3_DOMAIN",None)
+
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
-
+STATICFILES_LOCATION = 'static'
+if os.environ.get("AWS_ENVIRONMENT"):
+    STATICFILES_STORAGE = 'custom_storages.StaticStorage'
+    STATIC_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, STATICFILES_LOCATION)
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, "static")
+STATIC_ROOT = os.path.join(BASE_DIR, "static") #for development
 
 STATICFILE_FINDERS = [
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
 ]
 
 
+
 #media files
-MEDIA_ROOT = os.path.join(BASE_DIR, "media")
-MEDIA_URL = '/media/'
+MEDIAFILES_LOCATION = 'media'
+MEDIA_ROOT = os.path.join(BASE_DIR, "media") #for development
+if AWS_S3_CUSTOM_DOMAIN:
+    MEDIA_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, MEDIAFILES_LOCATION)
+else:
+    MEDIA_URL = '/media/'
+
+if os.environ.get("AWS_ENVIRONMENT"):
+    DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
+
+
 
 #Redactor settings
-REDACTOR_OPTIONS = {'lang': 'en'}
+REDACTOR_OPTIONS = {'lang': 'en',
+                    'plugins': [
+                        'video',
+                        'table',
+                        'source',
+                        'inlinestyle',
+                        'fullscreen',
+                        'fontsize',
+                        'fontfamily',
+                        'fontcolor',
+                        'counter'
+                    ]}
+REDACTOR_UPLOAD = 'uploads/'
 
 #email options
-EMAIL_HOST = 'smtp.sendgrid.net'
-EMAIL_HOST_USER = os.environ.get("SEND_GRID_USERNAME",'placeholder')
-EMAIL_HOST_PASSWORD = os.environ.get("SEND_GRID_PASSWORD",'placeholder')
-EMAIL_PORT = 587
-EMAIL_USE_TLS = True
+if os.environ.get('AWS_ENVIRONMENT',None):
+    EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+    EMAIL_HOST = 'smtp.sendgrid.net'
+    EMAIL_HOST_USER = os.environ.get("SEND_GRID_USERNAME",'placeholder')
+    EMAIL_HOST_PASSWORD = os.environ.get("SEND_GRID_PASSWORD",'placeholder')
+    EMAIL_PORT = 587
+    EMAIL_USE_TLS = True
+else:
+    EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+    # DEFAULT_FROM_EMAIL = 'testing@example.com'
+    EMAIL_HOST_USER = ''
+    EMAIL_HOST_PASSWORD = ''
+    EMAIL_USE_TLS = False
+    EMAIL_PORT = 1025
+
+
+
 

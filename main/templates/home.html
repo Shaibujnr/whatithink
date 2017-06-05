@@ -1,0 +1,157 @@
+{% extends 'base.html' %}
+{% load static from staticfiles%}
+{% block home_active %}active{% endblock %}
+{% block content %}
+	<div class="slider">
+		<div class="container">
+			<div id="about-slider">
+				<div id="carousel-slider" class="carousel slide" data-ride="carousel">
+					<!-- Indicators -->
+				  	<ol class="carousel-indicators visible-xs">
+					    <li data-target="#carousel-slider" data-slide-to="0" class="active"></li>
+					    <li data-target="#carousel-slider" data-slide-to="1"></li>
+					    <li data-target="#carousel-slider" data-slide-to="2"></li>
+                        <li data-target="#carousel-slider" data-slide-to="3"></li>
+				  	</ol>
+
+					<div class="carousel-inner">
+						<div class="item active">
+							<img src="{% static 'images/me1.png' %}" class="img-responsive" alt="">
+					   </div>
+					   <div class="item">
+							<img src="{% static 'images/me2.png' %}" class="img-responsive" alt="">
+					   </div> 
+					   <div class="item">
+							<img src="{% static 'images/me3.png' %}" class="img-responsive" alt="">
+					   </div>
+                        <div class="item">
+                            <img src="{% static 'images/me4.png' %}" class="img-responsive" alt="">
+                        </div>
+                    </div>
+					
+					<a class="left carousel-control hidden-xs" href="#carousel-slider" data-slide="prev">
+						<i class="fa fa-angle-left"></i> 
+					</a>
+					
+					<a class=" right carousel-control hidden-xs"href="#carousel-slider" data-slide="next">
+						<i class="fa fa-angle-right"></i> 
+					</a>
+				</div> <!--/#carousel-slider-->
+			</div><!--/#about-slider-->
+		</div>
+	</div>
+
+	 <section id="feature" >
+        <div class="container">
+           <div class="center wow fadeInDown">
+                <h2>Languages</h2>
+                <p class="lead">I am more of a computer guy, programming to be precise<br> and here are the computer languages I speak</p>
+            </div>
+
+            <div class="row">
+                <div class="features">
+                    <div class="col-md-4 col-sm-6 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
+                        <div class="feature-wrap">
+                            <i class="fa fa-laptop"></i>
+                            <h2>Python</h2>
+                            <h3>Django,PyQt,Kivy</h3>
+                        </div>
+                    </div><!--/.col-md-4-->
+
+                    <div class="col-md-4 col-sm-6 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
+                        <div class="feature-wrap">
+                            <i class="fa fa-mobile"></i>
+                            <h2>Java</h2>
+                            <h3>Android,Desktop</h3>
+                        </div>
+                    </div><!--/.col-md-4-->
+
+                    <div class="col-md-4 col-sm-6 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
+                        <div class="feature-wrap">
+                            <i class="fa fa-cloud-download"></i>
+                            <h2>SQL</h2>
+                            <h3>Sqlite,Postgresql</h3>
+                        </div>
+                    </div><!--/.col-md-4-->
+                
+                    <div class="col-md-4 col-sm-6 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
+                        <div class="feature-wrap">
+                            <i class="fa fa-code"></i>
+                            <h2>Javascript</h2>
+                            <h3>Node,Express,Jquery,Ajax</h3>
+                        </div>
+                    </div><!--/.col-md-4-->
+
+                    <div class="col-md-4 col-sm-6 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
+                        <div class="feature-wrap">
+                            <i class="fa fa-html5"></i>
+                            <h2>Html</h2>
+                            <h3>Basics</h3>
+                        </div>
+                    </div><!--/.col-md-4-->
+
+                    <div class="col-md-4 col-sm-6 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
+                        <div class="feature-wrap">
+                            <i class="fa fa-magic"></i>
+                            <h2>Css</h2>
+                            <h3>Basics</h3>
+                        </div>
+                    </div><!--/.col-md-4-->
+                </div><!--/.services-->
+            </div><!--/.row-->    
+        </div><!--/.container-->
+    </section><!--/#feature-->
+	
+	 <section id="recent-works">
+        <div class="container">
+            <div class="center wow fadeInDown">
+                <h2>Recent Works</h2>
+                <p class="lead">Here are some of my recent works<br> and ongoing projects</p>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12 col-sm-4 col-md-3">
+                    <div class="recent-work-wrap">
+                        <img class="img-responsive" src="{% static 'images/portfolio/recent/wip.png' %}" alt="">
+                        <div class="overlay">
+                            <div class="recent-work-inner">
+                                <h3><a href="#">WIP</a> </h3>
+                                <p>Work In Progress</p>
+                                <a class="preview" href="{% static 'images/portfolio/full/wip.png' %}" rel="prettyPhoto"><i class="fa fa-eye"></i> View</a>
+                            </div> 
+                        </div>
+                    </div>
+                </div>   
+
+                <div class="col-xs-12 col-sm-4 col-md-3">
+                    <div class="recent-work-wrap">
+                        <img class="img-responsive" src="{% static 'images/portfolio/recent/wip.png' %}" alt="">
+                        <div class="overlay">
+                            <div class="recent-work-inner">
+                                <h3><a href="#">WIP</a></h3>
+                                <p>Work In Progress</p>
+                                <a class="preview" href="{% static 'images/portfolio/full/wip.png' %}" rel="prettyPhoto"><i class="fa fa-eye"></i> View</a>
+                            </div> 
+                        </div>
+                    </div>
+                </div> 
+
+                <div class="col-xs-12 col-sm-4 col-md-3">
+                    <div class="recent-work-wrap">
+                        <img class="img-responsive" src="{% static 'images/portfolio/recent/wip.png' %}" alt="">
+                        <div class="overlay">
+                            <div class="recent-work-inner">
+                                <h3><a href="#">WIP</a></h3>
+                                <p>Work In Progress</p>
+                                <a class="preview" href="{% static 'images/portfolio/full/wip.png' %}" rel="prettyPhoto"><i class="fa fa-eye"></i> View</a>
+                            </div> 
+                        </div>
+                    </div>
+                </div>
+            </div><!--/.row-->
+        </div><!--/.container-->
+    </section><!--/#recent-works-->	
+	
+
+{% endblock %}
+	

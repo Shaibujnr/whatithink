@@ -129,8 +129,10 @@ AWS_S3_CUSTOM_DOMAIN = os.environ.get("S3_DOMAIN",None)
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 STATICFILES_LOCATION = 'static'
-STATICFILES_STORAGE = 'custom_storages.StaticStorage'
-STATIC_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, STATICFILES_LOCATION) if os.environ.get('AWS_ENVIRONMENT') else '/static/'
+if os.environ.get("AWS_ENVIRONMENT"):
+    STATICFILES_STORAGE = 'custom_storages.StaticStorage'
+    STATIC_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, STATICFILES_LOCATION)
+STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, "static") #for development
 
 STATICFILE_FINDERS = [

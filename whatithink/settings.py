@@ -28,7 +28,8 @@ DEBUG = False if os.environ.get('DEBUG') == 'false' else True
 
 #Allowed hosts
 env_host = os.environ.get('ALLOW_HOST')
-ALLOWED_HOSTS = ['localhost','127.0.0.1'] if not env_host else [env_host]
+domain_name = os.environ.get("ALLOW_DOMAIN")
+ALLOWED_HOSTS = ['localhost','127.0.0.1'] if not env_host else [env_host,domain_name]
 
 
 

@@ -37,7 +37,7 @@ def contact(request):
             content = template.render({'contact_name':contact_name,
                                     'contact_email':contact_email,
                                     'message':message})
-            send_mail(subject,content,'no-reply@shaibujnr.com',['s.shaibu.jnr@gmail.com'])
+            send_mail(subject,content,'no-reply@shaibu.me',['s.shaibu.jnr@gmail.com'])
             response = redirect('/thankyou/')
             response.set_cookie('contact_me',contact_name)
             return response

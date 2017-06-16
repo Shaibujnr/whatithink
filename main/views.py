@@ -1,10 +1,11 @@
 from django.http import HttpResponse
 from django.template.loader import get_template
 from .forms import ContactForm
-from django.core.mail import EmailMessage,send_mail
+from django.core.mail import send_mail
 from django.shortcuts import redirect
-from django.views.decorators.csrf import csrf_exempt
+from django.shortcuts import render
 # Create your views here.
+
 def home(request):
     if request.method == "GET":
         t = get_template("home.html")
@@ -17,13 +18,11 @@ def about(request):
         html = t.render()
         return HttpResponse(html,status=200)
 
-@csrf_exempt
+
 def contact(request):
     form_class = ContactForm()
     if request.method == "GET":
-        t = get_template("contact-us.html")
-        html = t.render({'form':form_class})
-        return HttpResponse(html,status=200)
+        return render(request,"contact-us.html",{"form":form_class},status=200)
     if request.method == "POST":
         #contact form submitted
         form = ContactForm(data=request.POST)
@@ -37,7 +36,7 @@ def contact(request):
             content = template.render({'contact_name':contact_name,
                                     'contact_email':contact_email,
                                     'message':message})
-            send_mail(subject,content,'no-reply@shaibujnr.com',['s.shaibu.jnr@gmail.com'])
+            send_mail(subject,content,'no-reply@shaibu.me',['s.shaibu.jnr@gmail.com'])
             response = redirect('/thankyou/')
             response.set_cookie('contact_me',contact_name)
             return response
